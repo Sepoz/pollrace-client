@@ -4,7 +4,7 @@ import { Bar } from 'vue-chartjs';
 export default {
   name: 'PollChart',
   props: {
-    pollArray: {
+    pollForChart: {
       type: Array,
       required: true,
     },
@@ -15,7 +15,7 @@ export default {
       labels: ['M5S', 'PD', 'LN', 'FI', 'FdI', 'LS', 'EU', 'EV', 'C', 'A', 'IV', 'Altri partiti', 'Vantaggio'],
       datasets: [
         {
-          data: this.pollArray,
+          data: this.pollForChart,
           barThickness: 35,
           label: '% di voti',
           backgroundColor: [
