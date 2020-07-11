@@ -33,7 +33,7 @@ export default {
       const intApiData = apiData.map((poll) => Number(poll));
       this.pollForChart = intApiData;
       this.loaded = true;
-      [this.tableData] = res.data;
+      this.tableData = res.data;
     }).catch((err) => {
       console.log(err);
     });
@@ -42,14 +42,6 @@ export default {
 </script>
 
 <style scoped>
-#home-page {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-color: rgba(170, 170, 170, 0.3);
-}
 h1 {
   margin: 10px;
   font-size: 48px;

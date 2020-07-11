@@ -1,20 +1,27 @@
 <template>
   <div id="polls-page">
     <h1>Andamento Partiti</h1>
+    <poll-table :tableData="tableData" />
   </div>
 </template>
 
 <script>
+import PollTable from '../components/PollTable.vue';
+
 export default {
   name: 'PollsPage',
+  components: {
+    'poll-table': PollTable,
+  },
   data() {
     return {
+      tableData: null,
       allPolls: null,
       loaded: false,
     };
   },
   mounted() {
-    this.$api.get('/10').then((res) => {
+    this.$api.get('/30').then((res) => {
       // object to array
       const apiData = res.data.map((poll) => Object.values(poll));
       // remove the first 3 values
@@ -23,18 +30,14 @@ export default {
       const intApiData = apiData.map((poll) => poll.map((p) => Number(p)));
       this.loaded = true;
       this.allPolls = intApiData;
+      this.tableData = res.data;
+      console.log(this.tableData);
+    }).catch((err) => {
+      console.log(err);
     });
   },
 };
 </script>
 
 <style scoped>
-#polls-page {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-color: rgba(170, 170, 170, 0.3);
-}
 </style>
