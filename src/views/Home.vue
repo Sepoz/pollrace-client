@@ -30,8 +30,7 @@ export default {
     this.$api.get('/1').then((res) => {
       const apiData = Object.keys(res.data[0]).map((poll) => res.data[0][poll]);
       apiData.splice(0, 3);
-      const intApiData = apiData.map((poll) => Number(poll));
-      this.pollForChart = intApiData;
+      this.pollForChart = apiData;
       this.loaded = true;
       this.tableData = res.data;
     }).catch((err) => {

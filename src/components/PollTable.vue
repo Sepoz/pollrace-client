@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="poll-table">
     <table class="homepage-table">
       <tr>
         <th class="table-labels">Data</th>
@@ -39,12 +39,13 @@ export default {
 
 <style scoped>
 .homepage-table {
-  height: 45%;
+  height: 100%;
   width: 90%;
   margin: 15px auto 15px auto;
   border-left: 8px solid #69F5A5;
   border-radius: 10px;
   box-shadow: 2px 2px 10px grey;
+  border-spacing: 0 15px;
 }
 .table-row {
   margin: 10px auto 10px auto;
@@ -52,5 +53,7 @@ export default {
 .table-labels {
   font-size: 20px;
 }
-.table-row:hover {background-color: #69F5A5;}
+.table-row:hover {
+  background-color: #69F5A5;
+}
 </style>

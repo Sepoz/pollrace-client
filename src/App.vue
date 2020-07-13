@@ -3,7 +3,6 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/polls">Grafico andamento</router-link>
-      <router-link to="/parties">Scopri i partiti</router-link>
     </div>
     <router-view/>
   </div>

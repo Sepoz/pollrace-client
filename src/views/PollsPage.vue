@@ -26,10 +26,8 @@ export default {
       const apiData = res.data.map((poll) => Object.values(poll));
       // remove the first 3 values
       apiData.map((poll) => poll.splice(0, 3));
-      // set to int all the values of the arrays
-      const intApiData = apiData.map((poll) => poll.map((p) => Number(p)));
       this.loaded = true;
-      this.allPolls = intApiData;
+      this.allPolls = apiData;
       this.tableData = res.data;
       console.log(this.tableData);
     }).catch((err) => {
