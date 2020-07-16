@@ -1,6 +1,6 @@
 <template>
   <div id="home-page">
-    <h1>MetaSondaggi</h1>
+    <h1>Sondaggi Politici</h1>
     <h4>Il sondaggio più recente</h4>
     <poll-table :tableData="tableData" />
     <div class="home-chart">

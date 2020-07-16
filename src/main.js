@@ -10,7 +10,7 @@ Vue.use({
   install(Vue) {
     // eslint-disable-next-line no-param-reassign
     Vue.prototype.$api = axios.create({
-      baseURL: 'http://localhost:3030/api/polls',
+      baseURL: 'http://3.124.170.43/api/polls',
     });
   },
 });
